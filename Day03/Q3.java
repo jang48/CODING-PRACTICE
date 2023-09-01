@@ -33,6 +33,14 @@ public class Q3 {
     public static int square(int a){
         return a * 5;
     }
+
+    public static boolean isNegative(int a) {
+        if( a >= 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
     public static void main(String[] args) {
 
         int a = func1();
@@ -81,6 +89,39 @@ public class Q3 {
         int rst5 = square(5);
         System.out.println(rst5); // 출력 : 25
 
+        // 0은 양수로 보겠습니다.
+        int no = 0;
+
+        if(isNegative(no)) {
+
+            System.out.println("음수입니다.");
+
+        } else {
+
+            System.out.println("양수입니다.");
+
+        }
+        // no 값을 바꿔가면서 테스트해보세요.
+
+        printEven(10); // 출력: 2 4 6 8 10
+        printEven(20); // 출력: 2 4 6 8 10 12 14 16 18 20
+        printEven(5); // 출력: 2 4
+
+    }
+    public static boolean isEven(int num) {
+        if(num % 2 == 0 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static void printEven(int n) {
+        for(int i = 1; i <= n; i++){
+            if(isEven(i)){
+                System.out.println(i);
+            }
+        }
     }
 
 }
