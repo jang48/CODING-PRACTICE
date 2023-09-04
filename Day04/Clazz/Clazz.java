@@ -1,4 +1,4 @@
-package Day04;
+package Day04.Clazz;
 
 public class Clazz {
     public static void main(String[] args) {
@@ -42,28 +42,60 @@ public class Clazz {
         arr.home = "대전";
         arr.name = "홍길동";
 
-        Person arr2 = new Person();
+        Person arr2 = new Person(); // new < 인스턴스(객체)
 
         arr2.age = 30;
         arr2.home = "서울";
         arr2.name = "이순신";
 
-
+        // 중복 해결방안 -> 함수 생성
         System.out.printf("%d살 %s사는 %s입니다.\n", arr.age, arr.home, arr.name);
         System.out.printf("%d살 %s사는 %s입니다.\n", arr2.age, arr2.home, arr2.name);
-
+        introduce(arr.age, arr.name, arr.home);
+        introduce(arr2.age, arr2.name, arr2.home);
+        /*introduce2(arr); // introduce2를 갖고있는 class 인 Person 에게 부탁하기
+        introduce2(arr2);*/
+        arr.introduce2();
+        arr2.introduce2();
 
     }
+
+    // 함수
+    public static void introduce(int age, String name, String home ){
+        System.out.printf("%d살 %s사는 %s입니다.\n", age, home, name);
+    }
+
+    // 함수 -> 같은 클래슨 내의 함수끼리는 서로 호출(사용) 가능
+   /* public static void introduce2(Person arr){
+        System.out.printf("%d살 %s사는 %s입니다.\n", arr.age, arr.home, arr.name);
+    }*/
 }
 
 
 // 컴퓨터한테 내가 생각한 어떤 개념 -> 컴퓨터한테 알려줘야 함.
 
 // 클래스는 기본적으로 클래스 밖에서 만든다.
-// 클래스의 본질 -> 관련된 데이터의 묶음
+// 클래스의 본질 -> 관련된 데이터의 묶음 + 해당 데이터를 사용하는 함수
+// 인스턴스(복사본,객체)를 사용하려면 static이 있으면 안된다.
+// 클래스는 현실세계의 개념 및 사물과 1:1 맵핑
+
+
+
+// static >> 공유
+// 객체 -> 개성을 표현하기 위함
+// 모든 객체가 공유하는 개념 -> 인류평균나이, 인류평균수명
+
 class Person {
+/*    static int age;
+    static String name;
+    static String home;
+    */
     int age;
     String name;
     String home;
+
+    public  void introduce2(){
+        System.out.printf("%d살 %s사는 %s입니다.\n", age, home, name);
+    }
 
 }
