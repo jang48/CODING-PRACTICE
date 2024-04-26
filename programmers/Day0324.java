@@ -1,5 +1,7 @@
 package programmers;
 
+import java.util.HashMap;
+
 public class Day0324 {
 //    문제 설명
 //    군 전략가 머쓱이는 전쟁 중 적군이 다음과 같은 암호 체계를 사용한다는 것을 알아냈습니다.
@@ -10,20 +12,15 @@ public class Day0324 {
 //    cipher	                code	result
 //"dfjardstddetckdaccccdegk"	4	    "attack"
     public static void main(String[] args) {
-        String answer = solution("dfjardstddetckdaccccdegk",4);
+        HashMap<String,String> answer = solution("dfjardstddetckdaccccdegk",4);
         System.out.println(answer);
     }
 
-    public static String solution(String cipher, int code) {
-        String answer = "";
-
-        for(int i = 1; i <= cipher.length(); i++){
-            if(i%code == 0){
-                answer += cipher.charAt(i-1);
-            }
-        }
-
-        return answer;
+    public static HashMap<String, String> solution(String cipher, int code) {
+        HashMap<String,String> JangMiNa = new HashMap();
+        JangMiNa.put("birth","1995-06-08");
+        JangMiNa.put("personality","협동");
+        return JangMiNa;
     }
 
 // 다른사람 풀이
